@@ -384,60 +384,7 @@
                             "key_code": "end"
                         }
                     ]
-                },
-                {
-                    "type": "basic",
-                    "conditions": [
-                      {
-                        "type": "variable_if",
-                        "name": "press_help",
-                        "value": 1
-                      }
-                    ],
-                    "from": {
-                        "key_code": "tab",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "tab",
-                          "modifiers": [
-                            "command"
-                          ]
-                        }
-                    ]
                 }
-            ]
-        },
-        {
-            "description": "Change Command+Tab to Control+Tab",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "tab",
-                  "modifiers": {
-                    "mandatory": [
-                      "command"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "tab",
-                    "modifiers": [
-                      "control"
-                    ]
-                  }
-                ],
-                "type": "basic"
-              }
             ]
         }
     ]
