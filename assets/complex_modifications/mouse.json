@@ -2,12 +2,12 @@
     "title": "Mouse Personal rules (@bamboo).",
     "rules": [
         {
-            "description": "英数キーをユーザ修飾キーに（helpで代替）",
+            "description": "英数キーをユーザ修飾キーに",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "help",
+                        "key_code": "lang2",
                         "modifiers": {
                             "optional": [ "any" ]
                         }
@@ -15,7 +15,7 @@
                     "to": [
                     {
                         "set_variable": {
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                         }
                     }
@@ -23,7 +23,7 @@
                     "to_after_key_up": [
                     {
                         "set_variable": {
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 0
                         }
                     }
@@ -43,7 +43,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -62,7 +62,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -81,7 +81,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -97,14 +97,14 @@
                     "to": [
                         {
                             "mouse_key": {
-                            "vertical_wheel": -30
+                            "vertical_wheel": 30
                             }
                         }
                     ],
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -120,14 +120,14 @@
                     "to": [
                         {
                             "mouse_key": {
-                            "vertical_wheel": 30
+                            "vertical_wheel": -30
                             }
                         }
                     ],
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -143,14 +143,14 @@
                     "to": [
                         {
                             "mouse_key": {
-                            "horizontal_wheel": 30
+                            "horizontal_wheel": -30
                             }
                         }
                     ],
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -166,14 +166,14 @@
                     "to": [
                         {
                             "mouse_key": {
-                            "horizontal_wheel": -30
+                            "horizontal_wheel": 30
                             }
                         }
                     ],
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ]
@@ -183,7 +183,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -206,7 +206,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -229,7 +229,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -252,7 +252,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -275,7 +275,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -298,7 +298,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -321,7 +321,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -344,7 +344,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -370,7 +370,7 @@
                     "conditions": [
                       {
                         "type": "variable_if",
-                        "name": "press_help",
+                        "name": "press_mod",
                         "value": 1
                       }
                     ],
@@ -394,33 +394,7 @@
                 {
                     "conditions": [
                         {
-                            "name": "press_help",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "tab",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "tab",
-                            "modifiers": [
-                                "command"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                },
-                {
-                    "conditions": [
-                        {
-                            "name": "press_help",
+                            "name": "press_mod",
                             "type": "variable_if",
                             "value": 1
                         }
@@ -464,34 +438,27 @@
                         }
                     ],
                     "type": "basic"
-                }
-
-            ]
-        },
-        {
-            "description": "Change Command+Tab to Control+Tab",
-            "manipulators": [
+                },
                 {
+                    "type": "basic",
                     "from": {
-                        "key_code": "tab",
-                        "modifiers": {
-                            "mandatory": [
-                                "command"
-                            ],
-                            "optional": [
-                                "any"
-                            ]
-                        }
+                      "key_code": "lang1",
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
                     },
-                    "to": [
-                        {
-                            "key_code": "tab",
-                            "modifiers": [
-                                "control"
-                            ]
-                        }
+                    "to_if_alone": [
+                      {
+                        "key_code": "lang2"
+                      }
                     ],
-                    "type": "basic"
+                    "to_if_held_down": [
+                      {
+                        "key_code": "lang1"
+                      }
+                    ]
                 }
             ]
         }
