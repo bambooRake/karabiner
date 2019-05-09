@@ -428,12 +428,18 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "press_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
                                         "optional": [
-                                            "command",
-                                            "shift"
+                                            "any"
                                         ]
                                     }
                                 },
