@@ -16,9 +16,8 @@
                         {
 
                             "set_variable": {
-                                "key_code": "vk_none",
-                            "name": "press_mod",
-                            "value": 1
+                                "name": "press_mod",
+                                "value": 1
                             }
                         }
                     ],
