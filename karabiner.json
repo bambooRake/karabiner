@@ -8,17 +8,18 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 50,
+                    "basic.to_if_alone_timeout_milliseconds": 200,
+                    "basic.to_if_held_down_threshold_milliseconds": 200
                 },
                 "rules": [
                     {
-                        "description": "英数キーをユーザ修飾キーに（helpで代替）",
+                        "description": "英数キーをユーザ修飾キーに",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "help",
+                                    "key_code": "lang2",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -28,7 +29,8 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "press_help",
+                                            "key_code": "vk_none",
+                                            "name": "press_mod",
                                             "value": 1
                                         }
                                     }
@@ -36,7 +38,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "press_help",
+                                            "name": "press_mod",
                                             "value": 0
                                         }
                                     }
@@ -46,7 +48,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -69,7 +71,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -92,7 +94,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -115,38 +117,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "mouse_key": {
-                                            "vertical_wheel": -30
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "press_help",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -165,13 +142,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "t",
+                                    "key_code": "4",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -181,7 +158,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "horizontal_wheel": 30
+                                            "vertical_wheel": -30
                                         }
                                     }
                                 ],
@@ -190,13 +167,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "5",
+                                    "key_code": "t",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -215,7 +192,32 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "5",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "horizontal_wheel": 30
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -238,7 +240,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -261,7 +263,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -284,7 +286,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -307,7 +309,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -330,7 +332,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -353,7 +355,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -376,7 +378,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -402,7 +404,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "press_help",
+                                        "name": "press_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -426,44 +428,12 @@
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "press_help",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "press_help",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
                                         "optional": [
-                                            "any"
+                                            "command",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -491,26 +461,44 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "",
-                                        "modifiers": [
-                                            "command"
-                                        ]
+                                        "key_code": "vk_none"
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change Command+Tab to Control+Tab",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
-                                    "key_code": "tab",
+                                    "key_code": "lang1",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "command"
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "lang2"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "lang1"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs$"
                                         ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
@@ -518,10 +506,79 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "control"
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
                                         ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
                                     }
                                 ],
                                 "type": "basic"
@@ -648,22 +705,6 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "japanese_eisuu"
-                    },
-                    "to": {
-                        "key_code": "help"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "japanese_kana"
-                    },
-                    "to": {
-                        "key_code": "f13"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "left_command"
                     },
                     "to": {
@@ -684,19 +725,12 @@
                     },
                     "to": {
                         "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "right_option"
-                    },
-                    "to": {
-                        "key_code": "right_option"
                     }
                 }
             ],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
+                "country_code": 0,
                 "keyboard_type": "jis"
             }
         }
